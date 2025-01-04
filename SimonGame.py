@@ -11,17 +11,17 @@ def clear_console():
 def red():
     clear_console()
     print("   _      _      _\n  /" + Fore.RED + "0" + Style.RESET_ALL + "\\    / \\    / \\ \n |" + Fore.RED + "000" + Style.RESET_ALL + "|  |___|  |___|")
-    time.sleep(0.7)
+    time.sleep(speed)
 
 def yellow():
     clear_console()
     print("   _      _      _\n  / \\    /" + Fore.YELLOW + "0" + Style.RESET_ALL + "\\    / \\ \n |___|  |" + Fore.YELLOW + "000" + Style.RESET_ALL + "|  |___|")
-    time.sleep(0.7)
+    time.sleep(speed)
 
 def green():
     clear_console()
     print("   _      _      _\n  / \\    / \\    /" + Fore.GREEN + "0" + Style.RESET_ALL + "\\ \n |___|  |___|  |" + Fore.GREEN + "000" + Style.RESET_ALL + "|")
-    time.sleep(0.7)
+    time.sleep(speed)
 
 def help():
     print("""------------
@@ -31,6 +31,7 @@ play : Starts the game.
 exit : Exit the game.
 help : Shows available commands.
 score : Shows highest score.
+speed : Changes the speed.
 ------------""")
 
 def high_score():
@@ -39,6 +40,7 @@ def high_score():
 
 colors = ["red", "yellow", "green"]
 highScore = 0
+speed = 1
 
 
 while True: 
@@ -85,4 +87,7 @@ while True:
         help()
     elif usrInput == "score":
         high_score()
+    elif usrInput == "speed":
+        new_speed = float(input("New speed: "))
+        speed = new_speed
     else: print("Invalid command.")
